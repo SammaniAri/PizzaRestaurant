@@ -1,10 +1,11 @@
 /** @format */
 
 import "./App.css";
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-//import NewNav from "./components/NewNav";
+import Header from "./components/Header";
+//import Navbar from "./components/Navbar";
 
 import {
 	BrowserRouter as Router,
@@ -16,7 +17,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				<Navbar />
+				<Header />
 				<Routes>
 					<Route
 						path="/"

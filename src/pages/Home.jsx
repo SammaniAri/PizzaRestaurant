@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import headerImage from "../assets/Steaming-slice.svg";
+import headerImage from "../assets/bgbgpizza.svg";
 
 const Home = () => {
 	return (
@@ -13,10 +13,10 @@ const Home = () => {
 					backgroundImage: `url(${headerImage})`,
 				}}>
 				<div class="pt-16">
-					<h1 class=" pt-48 pb-2 font-semibold leading-none tracking-tight text-gray-900 text-3xl md:text-5xl lg:text-6xl dark:text-white">
+					<h1 class=" pt-48 pb-2 font-semibold leading-none tracking-tight text- whitetext-3xl md:text-5xl lg:text-6xl dark:text-white">
 						Sam's Pizza
 					</h1>
-					<h2 class="pb-16 text-2xl md:text-4xl lg:text-5xl font-normal dark:text-white">
+					<h2 class="pb-16 text-2xl md:text-4xl lg:text-5xl font-normal text-white dark:text-white">
 						Pizza to fit any taste
 					</h2>
 					<Link>
@@ -28,6 +28,7 @@ const Home = () => {
 					</Link>
 				</div>
 			</div>
+			<div></div>
 		</div>
 	);
 };

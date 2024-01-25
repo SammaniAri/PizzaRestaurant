@@ -2,8 +2,10 @@
 
 .App {
   text-align: center;
-  background-color: bisque;
+  background-color: #26282D;
+  color: white;
 }
+
 
 .App-logo {
   height: 40vmin;
