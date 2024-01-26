@@ -21,7 +21,8 @@ const Header = () => {
 				</button>
 			</div>
 			<div
-				class="mobileLinks"
+				//mobileLinks
+
 				className={`sm:hidden ${
 					hamburger
 						? "flex flex-col space-y-1 fixed top-12 left-12 z-50 bg-[#050708] rounded-lg w-64"
