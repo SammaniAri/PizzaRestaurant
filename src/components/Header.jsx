@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/testLogo.jpg";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -27,10 +27,24 @@ const Header = () => {
 						? "flex flex-col space-y-1 fixed top-12 left-12 z-50 bg-[#050708] rounded-lg w-64"
 						: "hidden"
 				}`}>
-				<Link to="/">Home</Link>
-				<Link to="/menu">Menu</Link>
-				<Link to="/about">About</Link>
-				<Link to="/contact">
+				<Link
+					to="/"
+					class="hover:bg-[#A20000] font-bold">
+					Home
+				</Link>
+				<Link
+					to="/menu"
+					class="hover:bg-[#A20000]">
+					Menu
+				</Link>
+				<Link
+					to="/about"
+					class="hover:bg-[#A20000]">
+					About
+				</Link>
+				<Link
+					to="/contact"
+					class="hover:bg-[#A20000]">
 					Contact
 				</Link>
 			</div>
@@ -40,10 +54,24 @@ const Header = () => {
 				alt="Your Company"
 			/>
 			<div class="navLinks hidden md:flex w-1/3 justify-between">
-				<Link to="/">Home</Link>
-				<Link to="/menu">Menu</Link>
-				<Link to="/about">About</Link>
-				<Link to="/contact">
+				<Link
+					to="/"
+					class="hover:text-[#A20000]">
+					Home
+				</Link>
+				<Link
+					to="/menu"
+					class="hover:text-[#A20000]">
+					Menu
+				</Link>
+				<Link
+					to="/about"
+					class="hover:text-[#A20000]">
+					About
+				</Link>
+				<Link
+					to="/contact"
+					class="hover:text-[#A20000]">
 					Contact
 				</Link>
 			</div>
