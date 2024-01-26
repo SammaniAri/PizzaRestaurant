@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import bgSteaming from "../assets/Steaming-slice.svg";
+import steaming from "../assets/steaming.svg";
 import MenuItem from "../components/MenuItem";
 import { MenuList } from "../helpyers/MenuList";
 
@@ -10,7 +10,7 @@ const Menu = () => {
 		<div
 			class="bg-no-repeat bg-center bg-cover min-h-screen"
 			style={{
-				backgroundImage: `url(${bgSteaming})`,
+				backgroundImage: `url(${steaming})`,
 			}}>
 			{" "}
 			<h1 class="pt-16 pb-16 font-semibold leading-none tracking-tight text-white text-3xl md:text-5xl lg:text-6xl dark:text-white">
