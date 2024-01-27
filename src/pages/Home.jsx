@@ -21,7 +21,7 @@ const Home = () => {
 					</h2>
 					<div class="text-left pl-16">
 						{" "}
-						<Link>
+						<Link to="/menu">
 							<button
 								type="button"
 								class="text-white bg-[#050708] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-2 p-2">
