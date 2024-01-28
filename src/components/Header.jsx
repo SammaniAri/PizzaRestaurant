@@ -13,8 +13,8 @@ const Header = () => {
 	};
 
 	return (
-		<div class="bg-[#050708] sticky top-0 z-[20] mx-auto flex w-full items-center justify-between">
-			<div class="hamburger md:hidden fixed top-4 left-4 z-50">
+		<div className="bg-[#050708] sticky top-0 z-[20] mx-auto flex w-full items-center justify-between">
+			<div className="hamburger md:hidden fixed top-4 left-4 z-50">
 				<button
 					onClick={toggleHamburger}>
 					<MenuIcon fontSize="large" />
@@ -30,49 +30,49 @@ const Header = () => {
 				}`}>
 				<Link
 					to="/"
-					class="hover:bg-[#A20000] font-bold">
+					className="hover:bg-[#A20000] font-bold">
 					Home
 				</Link>
 				<Link
 					to="/menu"
-					class="hover:bg-[#A20000]">
+					className="hover:bg-[#A20000]">
 					Menu
 				</Link>
 				<Link
 					to="/about"
-					class="hover:bg-[#A20000]">
+					className="hover:bg-[#A20000]">
 					About
 				</Link>
 				<Link
 					to="/contact"
-					class="hover:bg-[#A20000]">
+					className="hover:bg-[#A20000]">
 					Contact
 				</Link>
 			</div>
 			<img
-				class="h-16 w-16 hidden md:inline "
+				className="h-16 w-16 hidden md:inline "
 				src={Logo}
 				alt="Your Company"
 			/>
-			<div class="navLinks hidden md:flex w-1/3 justify-between">
+			<div className="navLinks hidden md:flex w-1/3 justify-between">
 				<Link
 					to="/"
-					class="hover:text-[#A20000]">
+					className="hover:text-[#A20000]">
 					Home
 				</Link>
 				<Link
 					to="/menu"
-					class="hover:text-[#A20000]">
+					className="hover:text-[#A20000]">
 					Menu
 				</Link>
 				<Link
 					to="/about"
-					class="hover:text-[#A20000]">
+					className="hover:text-[#A20000]">
 					About
 				</Link>
 				<Link
 					to="/contact"
-					class="hover:text-[#A20000]">
+					className="hover:text-[#A20000]">
 					Contact
 				</Link>
 			</div>

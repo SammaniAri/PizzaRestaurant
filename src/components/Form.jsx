@@ -7,11 +7,11 @@ const Form = () => {
 		<div>
 			<form
 				method="POST"
-				class="m-12">
-				<div class="mb-4">
+				className="m-12">
+				<div className="mb-4">
 					<label
 						htmlFor="name"
-						class="block text-sm font-medium text-black">
+						className="block text-sm font-medium text-white">
 						Name:
 					</label>
 					<input
@@ -22,10 +22,10 @@ const Form = () => {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
-				<div class="mb-4">
+				<div className="mb-4">
 					<label
 						htmlFor="mail"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium   text-white">
 						E-mail:
 					</label>
 					<input
@@ -36,10 +36,10 @@ const Form = () => {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
-				<div class="mb-4">
+				<div className="mb-4">
 					<label
 						htmlFor="phone"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium  text-white">
 						Phone:
 					</label>
 					<input
@@ -50,10 +50,10 @@ const Form = () => {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
-				<div class="mb-4">
+				<div className="mb-4">
 					<label
 						htmlFor="date"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium  text-white">
 						Reservation Date:
 					</label>
 					<input
@@ -63,10 +63,10 @@ const Form = () => {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
-				<div class="mb-4">
+				<div className="mb-4">
 					<label
 						htmlFor="time"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium   text-white">
 						Reservation Time:
 					</label>
 					<input
@@ -76,10 +76,10 @@ const Form = () => {
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
-				<div class="mb-4">
+				<div className="mb-4">
 					<label
 						htmlFor="headCount"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium   text-white">
 						Number of people:
 					</label>
 					<input
@@ -91,7 +91,7 @@ const Form = () => {
 				<div>
 					<label
 						htmlFor="headCount"
-						class="block text-sm font-medium  text-black">
+						className="block text-sm font-medium   text-white">
 						Additional Notes (Optional)
 					</label>
 					<textarea
@@ -101,7 +101,7 @@ const Form = () => {
 						type="text"
 						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"></textarea>
 				</div>
-				<button class="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
+				<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
 					{" "}
 					Make a Reservation
 				</button>
