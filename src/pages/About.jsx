@@ -5,20 +5,18 @@ import bg from "../assets/bgbgpizza.svg";
 
 const About = () => {
 	return (
-		<div class="w-full flex flex-col min-h-screen">
+		<div className="w-full flex flex-col min-h-screen">
 			<div
-				class="md:w-full min-h-[25vh] flex-grow bg-center bg-no-repeat bg-cover"
+				className="md:w-full min-h-[25vh] flex-grow bg-center bg-no-repeat bg-cover"
 				style={{
 					backgroundImage: `url(${bg})`,
 				}}></div>
-			{/* 	<div class="w-full flex justify-center">
-				<img src={bg} />
-			</div> */}
-			<div class="flex flex-col items-center mt-12 mx-16 md:mx-72 justify-center">
-				<h1 class="text-4xl pb-6">
+			v
+			<div className="flex flex-col items-center mt-12 mx-16 md:mx-72 justify-center">
+				<h1 className="text-4xl pb-6">
 					ABOUT US
 				</h1>
-				<p class="text-2xl pb-8">
+				<p className="text-2xl pb-8">
 					Lorem ipsum dolor sit amet,
 					consectetur adipiscing elit,
 					sed do eiusmod tempor
