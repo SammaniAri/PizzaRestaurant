@@ -6,13 +6,13 @@ import Form from "../components/Form";
 
 const Contact = () => {
 	return (
-		<div class="flex flex-wrap min-h-screen bg-no-repeat bg-cover">
+		<div className="contact w-full h-[90vh] flex bg-white ">
 			<div
-				class="leftSide w-1/2"
+				className="leftSide h-full flex-[1_1_50%] bg-center bg-no-repeat bg-cover"
 				style={{
 					backgroundImage: `url(${oven})`,
 				}}></div>
-			<div class="rightSide w-1/2">
+			<div className="rightSide h-full  flex-[1_1_50%] flex flex-col justify-center mt-12 text-2xl text-black">
 				<p>Want to book a table?</p>
 				<Form />
 			</div>
