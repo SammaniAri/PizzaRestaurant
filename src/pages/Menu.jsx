@@ -1,11 +1,40 @@
 /** @format */
 
-import React from "react";
+import React, {
+	useState,
+	useEffect,
+} from "react";
 import steaming from "../assets/steaming.svg";
 import MenuItem from "../components/MenuItem";
-import { MenuList } from "../helpyers/MenuList";
+import { db } from "../firebase-config";
+
+import {
+	collection,
+	getDocs,
+} from "firebase/firestore";
 
 const Menu = () => {
+	const [pizzas, setpizzas] = useState(
+		[]
+	);
+	const pizzasCollectionRef =
+		collection(db, "pizzas");
+
+	useEffect(() => {
+		const getPizzas = async () => {
+			const data = await getDocs(
+				pizzasCollectionRef
+			);
+			//console.log(data);
+			setpizzas(
+				data.docs.map((doc) => ({
+					...doc.data(),
+					id: doc.id,
+				}))
+			);
+		};
+		getPizzas();
+	});
 	return (
 		<div
 			className="bg-no-repeat bg-center bg-cover min-h-screen"
@@ -17,23 +46,21 @@ const Menu = () => {
 				Our Menu
 			</h1>
 			<div className="menuList flex flex-wrap justify-center">
-				{MenuList.map(
-					(menuItem, key) => {
-						return (
-							<div>
-								<MenuItem
-									key={key}
-									image={menuItem.image}
-									name={menuItem.name}
-									ingredients={
-										menuItem.ingredients
-									}
-									price={menuItem.price}
-								/>
-							</div>
-						);
-					}
-				)}
+				{pizzas.map((pizza, key) => {
+					return (
+						<div>
+							<MenuItem
+								key={key}
+								image={pizza.image}
+								name={pizza.name}
+								ingredients={
+									pizza.ingredients
+								}
+								price={pizza.price}
+							/>
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
