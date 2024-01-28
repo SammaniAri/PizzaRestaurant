@@ -11,7 +11,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="name"
-						class="block text-sm font-medium text-black">
+						class="block text-sm font-medium text-white">
 						Name:
 					</label>
 					<input
@@ -25,7 +25,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="mail"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium   text-white">
 						E-mail:
 					</label>
 					<input
@@ -39,7 +39,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="phone"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium  text-white">
 						Phone:
 					</label>
 					<input
@@ -53,7 +53,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="date"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium  text-white">
 						Reservation Date:
 					</label>
 					<input
@@ -66,7 +66,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="time"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium   text-white">
 						Reservation Time:
 					</label>
 					<input
@@ -79,7 +79,7 @@ const Form = () => {
 				<div class="mb-4">
 					<label
 						htmlFor="headCount"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium   text-white">
 						Number of people:
 					</label>
 					<input
@@ -91,7 +91,7 @@ const Form = () => {
 				<div>
 					<label
 						htmlFor="headCount"
-						class="block text-sm font-medium  text-black">
+						class="block text-sm font-medium   text-white">
 						Additional Notes (Optional)
 					</label>
 					<textarea
