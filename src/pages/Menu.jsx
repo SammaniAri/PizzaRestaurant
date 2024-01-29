@@ -17,10 +17,11 @@ const Menu = () => {
 	const [pizzas, setpizzas] = useState(
 		[]
 	);
-	const pizzasCollectionRef =
-		collection(db, "pizzas");
+	
 
 	useEffect(() => {
+		const pizzasCollectionRef =
+			collection(db, "pizzas");
 		const getPizzas = async () => {
 			const data = await getDocs(
 				pizzasCollectionRef
@@ -34,7 +35,7 @@ const Menu = () => {
 			);
 		};
 		getPizzas();
-	});
+	}, []);
 	return (
 		<div
 			className="bg-no-repeat bg-center bg-cover min-h-screen"
