@@ -39,6 +39,16 @@ const Form = () => {
 					...userData,
 				}
 			);
+			setUserData({
+				name: "",
+				mail: "",
+				phone: "",
+				date: "",
+				time: "",
+				headCount: "",
+				message: "",
+			});
+			alert("Reservation is made");
 			console.log(
 				"Document written with ID: ",
 				docRef.id
@@ -69,7 +79,7 @@ const Form = () => {
 						placeholder="Enter full name"
 						type="text"
 						required
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 				<div className="mb-8">
@@ -85,7 +95,7 @@ const Form = () => {
 						placeholder="Enter your e-mail address"
 						type="email"
 						required
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 				<div className="mb-8">
@@ -101,7 +111,7 @@ const Form = () => {
 						placeholder="Enter your phone number"
 						type="number"
 						required
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 				<div className="mb-8">
@@ -116,13 +126,13 @@ const Form = () => {
 						onChange={data}
 						type="date"
 						required
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 				<div className="mb-8">
 					<label
 						htmlFor="time"
-						className="block text-sm font-medium   text-white">
+						className="block text-sm font-medium">
 						Reservation Time:
 					</label>
 					<input
@@ -131,7 +141,7 @@ const Form = () => {
 						onChange={data}
 						type="time"
 						required
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 				<div className="mb-8">
@@ -145,7 +155,7 @@ const Form = () => {
 						value={userData.headCount}
 						onChange={data}
 						type="text"
-						className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
+						className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 					/>
 				</div>
 
