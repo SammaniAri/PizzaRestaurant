@@ -62,10 +62,10 @@ const Form = () => {
 	};
 
 	return (
-		<div>
+		<div className="border-2 rounded-md m-4 md:mx-24">
 			<form
 				method="POST"
-				className="m-12">
+				className="m-12 ">
 				<div className="mb-8">
 					<label
 						htmlFor="name"
