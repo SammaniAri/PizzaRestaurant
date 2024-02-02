@@ -1,9 +1,14 @@
 /** @format */
 
-import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, {
+	useState,
+	useEffect,
+} from "react";
+import {
+	createUserWithEmailAndPassword,
+	onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "../firebase-config";
-import { Password } from "@mui/icons-material";
 
 const Login = () => {
 	const [
@@ -15,6 +20,7 @@ const Login = () => {
 		setRegisterPassword,
 	] = useState("");
 	const register = async () => {
+		//console.log("yo");
 		try {
 			const user =
 				await createUserWithEmailAndPassword(
@@ -22,9 +28,7 @@ const Login = () => {
 					registerMail,
 					registerPassword
 				);
-			//console.log(user);
-			console.log("registerMail" + registerMail);
-			console.log("registerPassword" + registerPassword);
+			console.log(user);
 		} catch (error) {
 			console.log(error);
 		}
@@ -39,6 +43,19 @@ const Login = () => {
 	const login = async () => {};
 
 	const logout = async () => {};
+
+	const [user, setUser] =
+		useState(null);
+
+	/*	useEffect(() => {
+		onAuthStateChanged(
+			auth,
+			(currentUser) => {
+				setUser(currentUser);
+			}
+		);
+	}, []);    */
+
 	return (
 		<div className="mx-56">
 			<div className="signup">
@@ -86,14 +103,16 @@ const Login = () => {
 						</div>
 
 						<button
+							type="button"
 							onClick={register}
 							className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
 							{" "}
 							Sign Up
 						</button>
-						<p class="text-sm font-light text-gray-500 dark:text-gray-400">
+
+						<p className="text-sm font-light text-gray-500 dark:text-gray-400">
 							Already have an account?
-							<a class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+							<a className="font-medium text-primary-600 hover:underline dark:text-primary-500">
 								Login here
 							</a>
 						</p>
@@ -142,15 +161,13 @@ const Login = () => {
 							className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 						/>
 					</div>
-					<button
-						onClick=""
-						className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
+					<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
 						{" "}
 						Sign in
 					</button>
-					<p class="text-sm font-light text-gray-500 dark:text-gray-400">
+					<p className="text-sm font-light text-gray-500 dark:text-gray-400">
 						Don’t have an account yet?{" "}
-						<a class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+						<a className="font-medium text-primary-600 hover:underline dark:text-primary-500">
 							Sign up
 						</a>
 					</p>
@@ -158,9 +175,7 @@ const Login = () => {
 			</div>
 			<div className="logout">
 				{" "}
-				<button
-					onClick=""
-					className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
+				<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
 					{" "}
 					Log out
 				</button>
