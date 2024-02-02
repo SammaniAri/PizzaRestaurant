@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import headerImage from "../assets/bgPizza.svg";
+ 
 
 const Home = () => {
 	return (
@@ -20,7 +21,6 @@ const Home = () => {
 						Pizza to fit any taste
 					</h2>
 					<div className="text-left pl-16">
-						{" "}
 						<Link to="/menu">
 							<button
 								type="button"

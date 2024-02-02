@@ -48,6 +48,11 @@ const Header = () => {
 					className="hover:bg-[#A20000]">
 					Contact
 				</Link>
+				<Link
+					to="/authpage"
+					className="hover:text-[#A20000]">
+					Log in
+				</Link>
 			</div>
 			<img
 				className="h-16 w-16 hidden md:inline "
@@ -74,6 +79,11 @@ const Header = () => {
 					to="/contact"
 					className="hover:text-[#A20000]">
 					Contact
+				</Link>
+				<Link
+					to="/authpage"
+					className="hover:text-[#A20000]">
+					Log in
 				</Link>
 			</div>
 
