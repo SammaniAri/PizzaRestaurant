@@ -1,16 +1,14 @@
 /** @format */
 
-import React, {
-	useState,
-	useEffect,
-} from "react";
+import React, { useState } from "react";
 import {
 	createUserWithEmailAndPassword,
-	onAuthStateChanged,
+	signInWithEmailAndPassword,
+	signOut,
 } from "firebase/auth";
 import { auth } from "../firebase-config";
 
-const Login = () => {
+const Authpage = () => {
 	const [
 		registerMail,
 		setRegisterMail,
@@ -40,21 +38,26 @@ const Login = () => {
 		loginPassword,
 		setLoginPassword,
 	] = useState("");
-	const login = async () => {};
 
-	const logout = async () => {};
+	const login = async (e) => {
+		e.preventDefault();
+		try {
+			await signInWithEmailAndPassword(
+				auth,
+				loginMail,
+				loginPassword
+			);
 
-	const [user, setUser] =
-		useState(null);
+			console.log("signed in!");
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-	/*	useEffect(() => {
-		onAuthStateChanged(
-			auth,
-			(currentUser) => {
-				setUser(currentUser);
-			}
-		);
-	}, []);    */
+	const logout = async () => {
+		await signOut(auth);
+		console.log("logged out");
+	};
 
 	return (
 		<div className="mx-56">
@@ -110,12 +113,12 @@ const Login = () => {
 							Sign Up
 						</button>
 
-						<p className="text-sm font-light text-gray-500 dark:text-gray-400">
+						<div className="text-sm font-light text-gray-500 dark:text-gray-400">
 							Already have an account?
-							<a className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+							<p className="font-medium text-primary-600 hover:underline dark:text-primary-500">
 								Login here
-							</a>
-						</p>
+							</p>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -161,21 +164,25 @@ const Login = () => {
 							className="mt-1 text-black block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
 						/>
 					</div>
-					<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
+					<button
+						className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2"
+						onClick={login}>
 						{" "}
 						Sign in
 					</button>
-					<p className="text-sm font-light text-gray-500 dark:text-gray-400">
+					<div className="text-sm font-light text-gray-500 dark:text-gray-400">
 						Don’t have an account yet?{" "}
-						<a className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+						<p className="font-medium text-primary-600 hover:underline dark:text-primary-500">
 							Sign up
-						</a>
-					</p>
+						</p>
+					</div>
 				</form>
 			</div>
 			<div className="logout">
 				{" "}
-				<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2">
+				<button
+					className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2"
+					onClick={logout}>
 					{" "}
 					Log out
 				</button>
@@ -184,4 +191,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Authpage;

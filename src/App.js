@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Login from "./pages/Login";
+import Authpage from "./pages/Authpage";
 
 import {
 	BrowserRouter as Router,
@@ -38,8 +38,8 @@ function App() {
 						element={<Contact />}
 					/>
 					<Route
-						path="/login"
-						element={<Login />}
+						path="/authpage"
+						element={<Authpage />}
 					/>
 				</Routes>
 				<Footer />

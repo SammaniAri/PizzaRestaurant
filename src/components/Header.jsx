@@ -49,7 +49,7 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
-					to="/login"
+					to="/authpage"
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
@@ -81,7 +81,7 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
-					to="/login"
+					to="/authpage"
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
