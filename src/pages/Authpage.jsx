@@ -65,9 +65,9 @@ const Authpage = () => {
 	};
 
 	return (
-		<div className="mx-56">
+		<div className="flex justify-center items-center min-h-screen">
 			{showSignUp ? (
-				<div className="signup">
+				<div className="signup mx-6 w-96">
 					<div className="login border-2 rounded-md m-12">
 						<form className="m-12">
 							<div className="mb-8">
@@ -138,7 +138,7 @@ const Authpage = () => {
 					</div>
 				</div>
 			) : (
-				<div className="login border-2 rounded-md m-12">
+				<div className="login border-2 rounded-md  mx-6 w-96">
 					<form className="m-12">
 						<div className="mb-8">
 							<label
