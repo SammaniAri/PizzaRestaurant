@@ -1,14 +1,16 @@
 /** @format */
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
-	//signOut,
 } from "firebase/auth";
 import { auth } from "../firebase-config";
 
 const Authpage = () => {
+	const navigate = useNavigate();
 	const [showSignUp, setShowSignUp] =
 		useState(false);
 	const toggleFormVisibility = () => {
@@ -33,6 +35,7 @@ const Authpage = () => {
 				);
 			console.log(user);
 			console.log("signed up");
+			navigate("/menu");
 		} catch (error) {
 			console.log(error);
 		}
@@ -55,6 +58,7 @@ const Authpage = () => {
 			);
 
 			console.log("signed in!");
+			navigate("/menu");
 		} catch (error) {
 			console.log(error);
 		}
