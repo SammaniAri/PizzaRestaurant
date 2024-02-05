@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Logo from "../assets/testLogo.jpg";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import Logout from "./Logout";
 
 const Header = () => {
 	const [hamburger, setHamburger] =
@@ -53,6 +54,7 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
+				<Logout></Logout>
 			</div>
 			<img
 				className="h-16 w-16 hidden md:inline "
@@ -85,6 +87,7 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
+				<Logout></Logout>
 			</div>
 
 			<div></div>
