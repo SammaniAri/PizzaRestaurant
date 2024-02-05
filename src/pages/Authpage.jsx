@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
-	signOut,
+	//signOut,
 } from "firebase/auth";
 import { auth } from "../firebase-config";
 
@@ -24,7 +24,6 @@ const Authpage = () => {
 		setRegisterPassword,
 	] = useState("");
 	const register = async () => {
-		//console.log("yo");
 		try {
 			const user =
 				await createUserWithEmailAndPassword(
@@ -33,6 +32,7 @@ const Authpage = () => {
 					registerPassword
 				);
 			console.log(user);
+			console.log("signed up");
 		} catch (error) {
 			console.log(error);
 		}
@@ -58,11 +58,6 @@ const Authpage = () => {
 		} catch (error) {
 			console.log(error);
 		}
-	};
-
-	const logout = async () => {
-		await signOut(auth);
-		console.log("logged out");
 	};
 
 	return (
@@ -203,16 +198,6 @@ const Authpage = () => {
 					</form>
 				</div>
 			)}
-
-			<div className="logout hidden">
-				{" "}
-				<button
-					className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 m-8 p-2"
-					onClick={logout}>
-					{" "}
-					Log out
-				</button>
-			</div>
 		</div>
 	);
 };

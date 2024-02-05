@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Logo from "../assets/testLogo.jpg";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import Logout from "./Logout";
 
 const Header = () => {
 	const [hamburger, setHamburger] =
@@ -87,7 +88,9 @@ const Header = () => {
 				</Link>
 			</div>
 
-			<div></div>
+			<div>
+				<Logout></Logout>
+			</div>
 		</div>
 	);
 };
