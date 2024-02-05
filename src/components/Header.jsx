@@ -54,6 +54,7 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
+				<Logout></Logout>
 			</div>
 			<img
 				className="h-16 w-16 hidden md:inline "
@@ -86,11 +87,10 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
-			</div>
-
-			<div>
 				<Logout></Logout>
 			</div>
+
+			<div></div>
 		</div>
 	);
 };
