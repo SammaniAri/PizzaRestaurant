@@ -64,7 +64,10 @@ const Header = () => {
 					onClick={handleCloseMenu}>
 					Log in
 				</Link>
-				<Logout></Logout>
+				<Logout
+					onLogout={
+						handleCloseMenu
+					}></Logout>
 			</div>
 			<img
 				className="h-16 w-16 hidden md:inline "
