@@ -100,7 +100,10 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Log in
 				</Link>
-				<Logout></Logout>
+				<Logout
+					onLogout={
+						handleCloseMenu
+					}></Logout>
 			</div>
 
 			<div></div>
