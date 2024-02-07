@@ -1,10 +1,17 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, {
+	useState,
+	useEffect,
+} from "react";
 import Logo from "../assets/testLogo.jpg";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logout from "./Logout";
+import {
+	getAuth,
+	onAuthStateChanged,
+} from "firebase/auth";
 
 const Header = () => {
 	const [hamburger, setHamburger] =
@@ -17,6 +24,22 @@ const Header = () => {
 		setHamburger(false);
 	};
 
+	const [showLogout, setShowLogout] =
+		useState(false);
+	const toggleLogoutVisibility = () => {
+		setShowLogout(!showLogout);
+	};
+
+	useEffect(() => {
+		const auth = getAuth();
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				setShowLogout(true);
+			} else {
+				setShowLogout(false);
+			}
+		});
+	}, []);
 
 	return (
 		<div className="bg-[#050708] sticky top-0 z-[20] mx-auto flex w-full items-center justify-between">
@@ -58,16 +81,24 @@ const Header = () => {
 					onClick={handleCloseMenu}>
 					Contact
 				</Link>
-				<Link
-					to="/authpage"
-					className="hover:text-[#A20000]"
-					onClick={handleCloseMenu}>
-					Log in
-				</Link>
-				<Logout
-					onLogout={
-						handleCloseMenu
-					}></Logout>
+				<div>
+					{showLogout ? (
+						<Logout
+							toggleLogout={
+								toggleLogoutVisibility
+							}
+							onLogout={
+								handleCloseMenu
+							}></Logout>
+					) : (
+						<Link
+							to="/authpage"
+							className="hover:text-[#A20000]"
+							onClick={handleCloseMenu}>
+							Log in
+						</Link>
+					)}
+				</div>
 			</div>
 			<img
 				className="h-16 w-16 hidden md:inline "
@@ -95,15 +126,24 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Contact
 				</Link>
-				<Link
-					to="/authpage"
-					className="hover:text-[#A20000]">
-					Log in
-				</Link>
-				<Logout
-					onLogout={
-						handleCloseMenu
-					}></Logout>
+
+				<div>
+					{showLogout ? (
+						<Logout
+							toggleLogout={
+								toggleLogoutVisibility
+							}
+							onLogout={
+								handleCloseMenu
+							}></Logout>
+					) : (
+						<Link
+							to="/authpage"
+							className="hover:text-[#A20000]">
+							Log in
+						</Link>
+					)}
+				</div>
 			</div>
 
 			<div></div>
