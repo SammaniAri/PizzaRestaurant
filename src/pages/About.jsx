@@ -11,7 +11,7 @@ const About = () => {
 				style={{
 					backgroundImage: `url(${bg})`,
 				}}></div>
-			v
+
 			<div className="flex flex-col items-center mt-12 mx-16 md:mx-72 justify-center">
 				<h1 className="text-4xl pb-6">
 					ABOUT US

@@ -70,6 +70,12 @@ const Header = () => {
 					Menu
 				</Link>
 				<Link
+					to="/cart"
+					className="hover:text-[#A20000]"
+					onClick={handleCloseMenu}>
+					Cart
+				</Link>
+				<Link
 					to="/about"
 					className="hover:bg-[#A20000]"
 					onClick={handleCloseMenu}>
@@ -115,6 +121,11 @@ const Header = () => {
 					to="/menu"
 					className="hover:text-[#A20000]">
 					Menu
+				</Link>
+				<Link
+					to="/cart"
+					className="hover:text-[#A20000]">
+					Cart
 				</Link>
 				<Link
 					to="/about"

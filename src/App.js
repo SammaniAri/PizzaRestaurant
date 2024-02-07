@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Authpage from "./pages/Authpage";
+import Cart from "./pages/Cart";
 
 import {
 	BrowserRouter as Router,
@@ -40,6 +41,10 @@ function App() {
 					<Route
 						path="/authpage"
 						element={<Authpage />}
+					/>
+					<Route
+						path="/cart"
+						element={<Cart />}
 					/>
 				</Routes>
 				<Footer />
