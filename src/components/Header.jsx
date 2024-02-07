@@ -93,7 +93,8 @@ const Header = () => {
 					) : (
 						<Link
 							to="/authpage"
-							className="hover:text-[#A20000]">
+							className="hover:text-[#A20000]"
+							onClick={handleCloseMenu}>
 							Log in
 						</Link>
 					)}
