@@ -5,13 +5,17 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
-const Logout = ({ onLogout }) => {
+const Logout = ({
+	onLogout,
+	toggleLogout,
+}) => {
 	const navigate = useNavigate();
 	const logout = async () => {
 		await signOut(auth);
 		console.log("logged out");
 		navigate("/authpage");
 		onLogout();
+		toggleLogout();
 	};
 	return (
 		<div className="logout">
