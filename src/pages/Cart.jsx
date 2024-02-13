@@ -97,7 +97,9 @@ return (
 													</div>
 													<div className="flex items-center space-x-4">
 														<p className="text-sm text-black">
-															259.000 ₭
+															{quantity *
+																cartItem.price}{" "}
+															KR
 														</p>
 														<DeleteIcon
 															aria-label="remove from cart"
