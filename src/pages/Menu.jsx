@@ -58,6 +58,9 @@ const Menu = () => {
 									pizza.ingredients
 								}
 								price={pizza.price}
+								quantity={
+									pizza.quantity
+								}
 							/>
 						</div>
 					);

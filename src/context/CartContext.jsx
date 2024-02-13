@@ -13,32 +13,57 @@ export const CartProvider = ({
 	const [cartItems, setCartItems] =
 		useState([]);
 
-	const addToCart = (addedItem) => {
+	const addToCart = (id) => {
 		setCartItems((prevItems) => [
 			...prevItems,
-			addedItem,
+			id,
 		]);
 
-		alert(
-			addedItem + " added to the cart"
-		);
+		alert(" pizza added to the cart");
 	};
 
-	const removeFromCart = (name) => {
+	const removeFromCart = (id) => {
 		setCartItems((prevItems) =>
 			prevItems.filter(
-				(item) => item.id !== name
+				(item) => item.id !== id
 			)
-		);
-		alert(
-			name + "removed from the cart"
 		);
 	};
 
-	/*const clearCart = () => {
-		setCartItems([]);
-		alert("your cart is empty");
-	};  */
+	const addMorePizzas = (
+		id,
+		quantity
+	) => {
+		setCartItems((prevItems) =>
+			prevItems.map((item) =>
+				item.id === id
+					? {
+							...item,
+							quantity:
+								item.quantity + 1,
+					  }
+					: item
+			)
+		);
+	};
+
+	const reducePizzaQuantity = (
+		id,
+		quantity
+	) => {
+		setCartItems((cartItems) =>
+			cartItems.map((item) =>
+				item.id === id &&
+				item.quantity >= 1
+					? {
+							...item,
+							quantity:
+								item.quantity - 1,
+					  }
+					: item
+			)
+		);
+	};
 
 	return (
 		<CartContext.Provider
@@ -46,7 +71,8 @@ export const CartProvider = ({
 				cartItems,
 				addToCart,
 				removeFromCart,
-				//clearCart,
+				addMorePizzas,
+				reducePizzaQuantity,
 			}}>
 			{children}
 		</CartContext.Provider>

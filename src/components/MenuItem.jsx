@@ -4,19 +4,14 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 
 const MenuItem = ({
-	key,
 	id,
 	image,
 	name,
 	ingredients,
 	price,
+	quantity,
 }) => {
-	const {
-		//cartItems,
-		addToCart,
-		//removeFromCart,
-		//clearCart,
-	} = useCart();
+	const { addToCart } = useCart();
 	return (
 		<div>
 			<div>
@@ -51,6 +46,7 @@ const MenuItem = ({
 											image,
 											name,
 											price,
+											quantity,
 										})
 									}
 									type="button"
