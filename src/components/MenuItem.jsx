@@ -1,14 +1,22 @@
 /** @format */
 
 import React from "react";
+import { useCart } from "../context/CartContext";
 
 const MenuItem = ({
 	key,
+	id,
 	image,
 	name,
 	ingredients,
 	price,
 }) => {
+	const {
+		//cartItems,
+		addToCart,
+		//removeFromCart,
+		//clearCart,
+	} = useCart();
 	return (
 		<div>
 			<div>
@@ -37,6 +45,14 @@ const MenuItem = ({
 								</span>
 
 								<button
+									onClick={() =>
+										addToCart({
+											id,
+											image,
+											name,
+											price,
+										})
+									}
 									type="button"
 									className="text-white bg-orange-600 hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-2 p-2">
 									Order Now

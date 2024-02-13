@@ -42,7 +42,6 @@ const Menu = () => {
 			style={{
 				backgroundImage: `url(${steaming})`,
 			}}>
-			{" "}
 			<h1 className="pt-16 pb-16 font-semibold leading-none tracking-tight text-white text-3xl md:text-5xl lg:text-6xl dark:text-white">
 				Our Menu
 			</h1>
@@ -52,6 +51,7 @@ const Menu = () => {
 						<div>
 							<MenuItem
 								key={key}
+								id={pizza.id}
 								image={pizza.image}
 								name={pizza.name}
 								ingredients={

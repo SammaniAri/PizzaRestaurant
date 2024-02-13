@@ -8,6 +8,7 @@ import Logo from "../assets/testLogo.jpg";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logout from "./Logout";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import {
 	getAuth,
 	onAuthStateChanged,
@@ -69,6 +70,7 @@ const Header = () => {
 					onClick={handleCloseMenu}>
 					Menu
 				</Link>
+
 				<Link
 					to="/about"
 					className="hover:bg-[#A20000]"
@@ -80,6 +82,12 @@ const Header = () => {
 					className="hover:bg-[#A20000]"
 					onClick={handleCloseMenu}>
 					Contact
+				</Link>
+				<Link
+					to="/cart"
+					className="hover:text-[#A20000]"
+					onClick={handleCloseMenu}>
+					<ShoppingCartIcon fontSize="medium" />
 				</Link>
 				<div>
 					{showLogout ? (
@@ -116,6 +124,7 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Menu
 				</Link>
+
 				<Link
 					to="/about"
 					className="hover:text-[#A20000]">
@@ -126,7 +135,11 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Contact
 				</Link>
-
+				<Link
+					to="/cart"
+					className="hover:text-[#A20000]">
+					<ShoppingCartIcon fontSize="medium" />
+				</Link>
 				<div>
 					{showLogout ? (
 						<Logout

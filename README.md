@@ -9,6 +9,7 @@ This is an e-commerce website, built with React.js, and Firebase.
    1. **React.js**: 
    2. **Tailwind.css**:
    3. **Firebase**:
+   4. **Context API**:
   
   
  ## How to Install and Run this Project as a developer
