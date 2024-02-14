@@ -1,17 +1,25 @@
 /** @format */
 
 import React from "react";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useCart } from "../context/CartContext";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const Cart = () => {
 	const {
 		cartItems,
-		//addToCart,
+		reducePizzaQuantity,
 		removeFromCart,
-		//clearCart,
+		addMorePizzas,
 	} = useCart();
+
+	const subtotal = cartItems.reduce(
+		(acc, item) =>
+			acc + item.price * item.quantity,
+		0
+	);
+	const shippingCost = 50;
 	return (
 		<div>
 			Cart
@@ -26,13 +34,12 @@ const Cart = () => {
 						<div className="rounded-lg md:w-2/3">
 							{cartItems.map(
 								(cartItem, key) => {
+									console.log(cartItem);
 									return (
 										<div>
 											<div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
 												<img
 													alt="selected pizza"
-													/*	src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80"
-									alt="product" */
 													src={
 														cartItem.image
 													}
@@ -54,23 +61,41 @@ const Cart = () => {
 													</div>
 													<div className="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
 														<div className="flex items-center border-gray-100">
-															<span className="text-black cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-orange-600 hover:text-orange-50">
-																-
-															</span>
+															<div className="text-black cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-orange-600 hover:text-orange-50">
+																<RemoveIcon
+																	onClick={() =>
+																		reducePizzaQuantity(
+																			cartItem.id,
+																			cartItem.quantity
+																		)
+																	}
+																/>
+															</div>
 															<input
 																className="h-8 w-8 border bg-white text-black text-center text-xs outline-none"
 																type="number"
-																value="2"
+																name="pizzaAmount"
 																min="1"
+																value={
+																	cartItem.quantity
+																}
 															/>
-															<span className="text-black cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-orange-600 hover:text-orange-50">
-																+
-															</span>
+															<div className="text-black cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-orange-600 hover:text-orange-50">
+																<AddIcon
+																	onClick={() =>
+																		addMorePizzas(
+																			cartItem.id,
+																			cartItem.quantity
+																		)
+																	}
+																/>
+															</div>
 														</div>
 														<div className="flex items-center space-x-4">
 															<p className="text-sm text-black">
-																259.000
-																₭
+																{cartItem.price *
+																	cartItem.quantity}
+																KR
 															</p>
 															<DeleteIcon
 																aria-label="remove from cart"
@@ -89,14 +114,14 @@ const Cart = () => {
 								}
 							)}
 						</div>
-						{/*  Sub total check out section */}
+						{/*  check out section */}
 						<div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
 							<div className="mb-2 flex justify-between">
 								<p className="text-gray-700">
 									Subtotal
 								</p>
 								<p className="text-gray-700">
-									$129.99
+									{subtotal} KR
 								</p>
 							</div>
 							<div className="flex justify-between">
@@ -104,7 +129,7 @@ const Cart = () => {
 									Shipping
 								</p>
 								<p className="text-gray-700">
-									$4.99
+									{shippingCost} KR
 								</p>
 							</div>
 							<hr className="my-4" />
@@ -114,7 +139,9 @@ const Cart = () => {
 								</p>
 								<div className="">
 									<p className="mb-1 text-lg font-bold">
-										$134.98 USD
+										{subtotal +
+											shippingCost}{" "}
+										KR
 									</p>
 									<p className="text-sm text-gray-700">
 										including VAT
