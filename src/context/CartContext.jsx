@@ -13,13 +13,21 @@ export const CartProvider = ({
 	const [cartItems, setCartItems] =
 		useState([]);
 
-	const addToCart = (id) => {
-		setCartItems((prevItems) => [
-			...prevItems,
-			id,
-		]);
-
-		alert(" pizza added to the cart");
+	const addToCart = (newItem) => {
+		//  some() method checks if any array elements pass a test
+		const isItemInCart = cartItems.some(
+			(cartItem) =>
+				cartItem.id === newItem.id
+		);
+		if (isItemInCart) {
+			alert("Item already in the cart");
+		} else {
+			setCartItems((prevItems) => [
+				...prevItems,
+				newItem,
+			]);
+			alert(" pizza added to the cart");
+		}
 	};
 
 	const removeFromCart = (id) => {
@@ -30,10 +38,7 @@ export const CartProvider = ({
 		);
 	};
 
-	const addMorePizzas = (
-		id,
-		quantity
-	) => {
+	const addMorePizzas = (id) => {
 		setCartItems((prevItems) =>
 			prevItems.map((item) =>
 				item.id === id
@@ -47,10 +52,7 @@ export const CartProvider = ({
 		);
 	};
 
-	const reducePizzaQuantity = (
-		id,
-		quantity
-	) => {
+	const reducePizzaQuantity = (id) => {
 		setCartItems((cartItems) =>
 			cartItems.map((item) =>
 				item.id === id &&

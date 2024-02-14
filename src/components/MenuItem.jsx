@@ -12,6 +12,14 @@ const MenuItem = ({
 	quantity,
 }) => {
 	const { addToCart } = useCart();
+	const item = {
+		id,
+		image,
+		name,
+		ingredients,
+		price,
+		quantity,
+	};
 	return (
 		<div>
 			<div>
@@ -41,13 +49,7 @@ const MenuItem = ({
 
 								<button
 									onClick={() =>
-										addToCart({
-											id,
-											image,
-											name,
-											price,
-											quantity,
-										})
+										addToCart(item)
 									}
 									type="button"
 									className="text-white bg-orange-600 hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-2 p-2">
