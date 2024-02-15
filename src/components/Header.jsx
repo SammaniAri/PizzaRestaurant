@@ -84,6 +84,12 @@ const Header = () => {
 					Contact
 				</Link>
 				<Link
+					to="/checkout"
+					className="hover:bg-[#A20000]"
+					onClick={
+						handleCloseMenu
+					}></Link>
+				<Link
 					to="/cart"
 					className="hover:text-[#A20000]"
 					onClick={handleCloseMenu}>
@@ -135,6 +141,9 @@ const Header = () => {
 					className="hover:text-[#A20000]">
 					Contact
 				</Link>
+				<Link
+					to="/checkout"
+					className="hover:text-[#A20000]"></Link>
 				<Link
 					to="/cart"
 					className="hover:text-[#A20000]">
