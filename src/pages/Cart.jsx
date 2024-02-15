@@ -10,17 +10,13 @@ import { Link } from "react-router-dom";
 const Cart = () => {
 	const {
 		cartItems,
+		subtotal,
+		shipping,
 		reducePizzaQuantity,
 		removeFromCart,
 		addMorePizzas,
 	} = useCart();
 
-	const subtotal = cartItems.reduce(
-		(acc, item) =>
-			acc + item.price * item.quantity,
-		0
-	);
-	const shippingCost = 50;
 	return (
 		<div>
 			Cart
@@ -130,7 +126,7 @@ const Cart = () => {
 									Shipping
 								</p>
 								<p className="text-gray-700">
-									{shippingCost} KR
+									{shipping} KR
 								</p>
 							</div>
 							<hr className="my-4" />
@@ -141,7 +137,7 @@ const Cart = () => {
 								<div className="">
 									<p className="mb-1 text-lg font-bold">
 										{subtotal +
-											shippingCost}{" "}
+											shipping}{" "}
 										KR
 									</p>
 									<p className="text-sm text-gray-700">
