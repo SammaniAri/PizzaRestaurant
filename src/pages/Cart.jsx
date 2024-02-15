@@ -20,11 +20,13 @@ const Cart = () => {
 		0
 	);
 	const shippingCost = 50;
+
+ 
 	return (
 		<div>
 			Cart
 			<div>
-				<div className="h-screen bg-black pt-20">
+				<div className="bg-black pt-20">
 					<h1 className="mb-10 text-center text-2xl font-bold">
 						Cart Items
 					</h1>

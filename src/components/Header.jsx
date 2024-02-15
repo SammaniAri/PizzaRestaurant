@@ -9,12 +9,17 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logout from "./Logout";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "../context/CartContext";
 import {
 	getAuth,
 	onAuthStateChanged,
 } from "firebase/auth";
 
 const Header = () => {
+	const { cartItems, totalPizzas } =
+		useCart();
+
+	console.log(cartItems);
 	const [hamburger, setHamburger] =
 		useState(false);
 	const toggleHamburger = () => {
@@ -88,6 +93,7 @@ const Header = () => {
 					className="hover:text-[#A20000]"
 					onClick={handleCloseMenu}>
 					<ShoppingCartIcon fontSize="medium" />
+					({totalPizzas})
 				</Link>
 				<div>
 					{showLogout ? (
@@ -139,6 +145,7 @@ const Header = () => {
 					to="/cart"
 					className="hover:text-[#A20000]">
 					<ShoppingCartIcon fontSize="medium" />
+					({totalPizzas})
 				</Link>
 				<div>
 					{showLogout ? (
