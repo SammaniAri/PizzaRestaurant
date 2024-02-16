@@ -66,11 +66,18 @@ export const CartProvider = ({
 			)
 		);
 	};
-
+	const subtotal = cartItems.reduce(
+		(acc, item) =>
+			acc + item.price * item.quantity,
+		0
+	);
+	const shipping = 50;
 	return (
 		<CartContext.Provider
 			value={{
 				cartItems,
+				subtotal,
+				shipping,
 				addToCart,
 				removeFromCart,
 				addMorePizzas,
