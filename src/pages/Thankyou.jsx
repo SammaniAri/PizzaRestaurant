@@ -10,7 +10,7 @@ const Thankyou = () => {
 			style={{
 				backgroundImage: `url(${thankyouImage})`,
 			}}>
-			<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 bg-[#E1DAC7]">
+			<div class="block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 bg-[#E1DAC7]">
 				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					Thank you for ordering our
 					pizzas!
