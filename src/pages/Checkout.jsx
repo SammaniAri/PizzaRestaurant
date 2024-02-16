@@ -6,6 +6,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
 	const {
@@ -13,8 +14,8 @@ const Checkout = () => {
 		subtotal,
 		shipping,
 	} = useCart();
-	console.log(cartItems);
-	console.log(subtotal);
+	//console.log(cartItems);
+	//console.log(subtotal);
 
 	const [
 		userDelivery,
@@ -159,7 +160,7 @@ const Checkout = () => {
 				<div className="m-12">
 					<div className="card text-white">
 						<div class="flex justify-center items-center   text-gray-900">
-							<div class="h-80  relative w-72 shadow-2xl p-3 bg-white mt-4">
+							<div class="h-96  relative w-72 shadow-2xl p-3 bg-white mt-4">
 								<div class="py-2">
 									<div class="text-center text-xl font-bold">
 										ORDER
@@ -221,13 +222,23 @@ const Checkout = () => {
 									)}
 								</div>
 
-								<div class="mb-1">
-									Discount：5%
+								<div class="mb-1 text-right">
+									Subtotal：{subtotal}KR
 								</div>
-
-								<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mt-20 p-2">
-									Place Order
-								</button>
+								<div class="mb-1 text-right">
+									Delivery Chrages：
+									{shipping}KR
+								</div>
+								<div class="mb-1 text-right font-bold">
+									Total：
+									{subtotal + shipping}
+									KR
+								</div>
+								<Link to="/thankyou">
+									<button className="text-white bg-[#A20000] hover:bg-[#A20000]/80 focus:ring-2 focus:outline-none focus:ring-[#050708]/50 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mt-0 p-2">
+										Place Order
+									</button>
+								</Link>
 							</div>
 						</div>
 					</div>

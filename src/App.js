@@ -11,6 +11,7 @@ import Authpage from "./pages/Authpage";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./pages/Checkout";
+import Thankyou from "./pages/Thankyou";
 
 import {
 	BrowserRouter as Router,
@@ -44,6 +45,10 @@ function App() {
 						<Route
 							path="/checkout"
 							element={<Checkout />}
+						/>
+						<Route
+							path="/thankyou"
+							element={<Thankyou />}
 						/>
 						<Route
 							path="/authpage"
