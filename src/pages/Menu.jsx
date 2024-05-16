@@ -3,6 +3,7 @@
 import React, {
 	useState,
 	useEffect,
+	useMemo,
 } from "react";
 import steaming from "../assets/steaming.svg";
 import MenuItem from "../components/MenuItem";
@@ -36,6 +37,24 @@ const Menu = () => {
 		};
 		getPizzas();
 	}, []);
+
+	const memoizedPizzas = useMemo(() => {
+		return pizzas.map((pizza, key) => (
+			<div key={key}>
+				<MenuItem
+					id={pizza.id}
+					image={pizza.image}
+					name={pizza.name}
+					ingredients={
+						pizza.ingredients
+					}
+					price={pizza.price}
+					quantity={pizza.quantity}
+				/>
+			</div>
+		));
+	}, [pizzas]);
+
 	return (
 		<div
 			className="bg-no-repeat bg-center bg-cover min-h-screen"
@@ -46,7 +65,7 @@ const Menu = () => {
 				Our Menu
 			</h1>
 			<div className="menuList flex flex-wrap justify-center">
-				{pizzas.map((pizza, key) => {
+				{/*	{pizzas.map((pizza, key) => {
 					return (
 						<div>
 							<MenuItem
@@ -64,7 +83,8 @@ const Menu = () => {
 							/>
 						</div>
 					);
-				})}
+				})} */}
+				{memoizedPizzas}
 			</div>
 		</div>
 	);
