@@ -14,7 +14,7 @@ import {
 	onAuthStateChanged,
 } from "firebase/auth";
 
-const Header = () => {
+const Header = React.memo(() => {
 	const [hamburger, setHamburger] =
 		useState(false);
 	const toggleHamburger = () => {
@@ -171,6 +171,6 @@ const Header = () => {
 			<div></div>
 		</div>
 	);
-};
+});
 
 export default Header;
