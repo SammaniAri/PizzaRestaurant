@@ -1,14 +1,15 @@
 /** @format */
-
+import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
-import Menu from "./pages/Menu";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+//import Menu from "./pages/Menu";
+
+//import About from "./pages/About";
+//import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Authpage from "./pages/Authpage";
-import Cart from "./pages/Cart";
+//import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./pages/Checkout";
 import Thankyou from "./pages/Thankyou";
@@ -18,6 +19,19 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
+
+const LazyMenu = React.lazy(() =>
+	import("./pages/Menu")
+);
+const LazyAbout = React.lazy(() =>
+	import("./pages/About")
+);
+const LazyContact = React.lazy(() =>
+	import("./pages/Contact")
+);
+const LazyCart = React.lazy(() =>
+	import("./pages/Cart")
+);
 
 function App() {
 	return (
@@ -32,15 +46,27 @@ function App() {
 						/>
 						<Route
 							path="/menu"
-							element={<Menu />}
+							element={
+								<React.Suspense fallback="loading...">
+									<LazyMenu />
+								</React.Suspense>
+							}
 						/>
 						<Route
 							path="/about"
-							element={<About />}
+							element={
+								<React.Suspense fallback="loading...">
+									<LazyAbout />
+								</React.Suspense>
+							}
 						/>
 						<Route
 							path="/contact"
-							element={<Contact />}
+							element={
+								<React.Suspense fallback="loading...">
+									<LazyContact />
+								</React.Suspense>
+							}
 						/>
 						<Route
 							path="/checkout"
@@ -56,7 +82,11 @@ function App() {
 						/>
 						<Route
 							path="/cart"
-							element={<Cart />}
+							element={
+								<React.Suspense fallback="loading...">
+									<LazyCart />
+								</React.Suspense>
+							}
 						/>
 					</Routes>
 					<Footer />
